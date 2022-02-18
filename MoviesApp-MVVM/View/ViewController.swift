@@ -8,10 +8,25 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
    
-    var dummyDatas = [String]()
+    var dummyDatas = [Result]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // URL
+        let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=6fe8370265c396656c58d7dd9ff3e712&language=en-US")!
+        
+        WebService().fetchDatas(url: url) { result in
+                print("wqeqweqwe",result)
+            
+            DispatchQueue.main.async {
+                self.dummyDatas = result!
+                self.collectionView.reloadData()
+            }
+        }
+        
+        
+        
         
         let design : UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let collectionWidth = self.collectionView.frame.size.width
@@ -27,11 +42,17 @@ class ViewController: UIViewController {
         collectionView!.collectionViewLayout = design
         
        
-        dummyDatas = ["Cherry","Pear","Apple","Grape","Sour Cherry","Fig","Blueberries","Plum","Cherry"]
+        
         
         //4
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+      
+  
+        
+        
+        
     }
 
 }
@@ -40,19 +61,16 @@ class ViewController: UIViewController {
 // 1
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    // 3
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
+   
     
     // 2
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"movieCell", for: indexPath ) as! MovieCollectionViewCell
         
         cell.lblMovieimdb.text = "\(indexPath.row)"
-        cell.lblMovieTitle.text = "\(dummyDatas[indexPath.row])"
+        cell.lblMovieTitle.text = "\(dummyDatas[indexPath.row].title!)"
         
+        // if let -> Label direk silinir gözükmez  & guard let genelde kullanılır force unwrap yapma!
         
         cell.layer.borderColor = UIColor.purple.cgColor
         cell.layer.borderWidth = 3
