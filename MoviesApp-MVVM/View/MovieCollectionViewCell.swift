@@ -9,5 +9,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var lblMovieimdb: UILabel!
     
+    @IBOutlet weak var imgView: UIImageView!
     
 }

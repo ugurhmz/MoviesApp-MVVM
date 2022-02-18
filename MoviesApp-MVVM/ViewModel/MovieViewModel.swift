@@ -42,4 +42,8 @@ struct MovieViewModel {
         return myAverage
     }
     
+    
+    var imgPath : String {
+        return "\(self.movie.backdropPath!)"
+    }
 }
