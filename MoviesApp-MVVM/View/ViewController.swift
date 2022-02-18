@@ -17,8 +17,7 @@ class ViewController: UIViewController {
         let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=6fe8370265c396656c58d7dd9ff3e712&language=en-US")!
         
         WebService().fetchDatas(url: url) { result in
-                print("wqeqweqwe",result)
-            
+                
             DispatchQueue.main.async {
                 self.dummyDatas = result!
                 self.collectionView.reloadData()

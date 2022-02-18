@@ -19,7 +19,6 @@ final class WebService {
             } else if let data = data {
 
                 
-
                 do {
 
                   let   movieList = try JSONDecoder().decode(Welcome.self, from: data)
