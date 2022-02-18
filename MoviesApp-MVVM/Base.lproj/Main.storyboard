@@ -34,33 +34,35 @@
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Avengers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4M-n6-c3g">
-                                                    <rect key="frame" x="36" y="129" width="142" height="42"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="42" id="AFS-y0-WNK"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="HoeflerText-BlackItalic" family="Hoefler Text" pointSize="21"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMDB 8.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qa-1Z-OPO">
-                                                    <rect key="frame" x="86" y="163" width="106" height="29"/>
+                                                    <rect key="frame" x="86" y="163" width="92" height="29"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="106" id="7Yq-d1-DPq"/>
-                                                        <constraint firstAttribute="height" constant="29" id="u4k-Ba-HNg"/>
+                                                        <constraint firstAttribute="width" constant="92" id="UOH-xJ-k8G"/>
+                                                        <constraint firstAttribute="height" constant="29" id="gYt-vI-8HU"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avengers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4M-n6-c3g">
+                                                    <rect key="frame" x="29" y="71" width="142" height="42"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="42" id="CMm-To-Zdz"/>
+                                                        <constraint firstAttribute="width" constant="142" id="ayG-Ya-Hsz"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HoeflerText-BlackItalic" family="Hoefler Text" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="2qa-1Z-OPO" secondAttribute="bottom" constant="8" id="Rf6-J7-azk"/>
-                                                <constraint firstItem="p4M-n6-c3g" firstAttribute="centerY" secondItem="92z-SG-UBo" secondAttribute="centerY" constant="50" id="f1f-xJ-Zn9"/>
-                                                <constraint firstItem="2qa-1Z-OPO" firstAttribute="leading" secondItem="92z-SG-UBo" secondAttribute="leading" constant="86" id="fWo-R4-AJo"/>
-                                                <constraint firstItem="2qa-1Z-OPO" firstAttribute="top" secondItem="92z-SG-UBo" secondAttribute="top" constant="163" id="qa1-jG-LY6"/>
-                                                <constraint firstAttribute="trailing" secondItem="2qa-1Z-OPO" secondAttribute="trailing" constant="8" id="th5-ky-q8v"/>
-                                                <constraint firstItem="p4M-n6-c3g" firstAttribute="centerX" secondItem="92z-SG-UBo" secondAttribute="centerX" constant="7" id="wcI-B0-vxm"/>
+                                                <constraint firstAttribute="bottom" secondItem="2qa-1Z-OPO" secondAttribute="bottom" constant="8" id="5PN-Qk-qdQ"/>
+                                                <constraint firstItem="p4M-n6-c3g" firstAttribute="leading" secondItem="92z-SG-UBo" secondAttribute="leading" constant="29" id="662-7x-LBG"/>
+                                                <constraint firstItem="2qa-1Z-OPO" firstAttribute="leading" secondItem="92z-SG-UBo" secondAttribute="leading" constant="86" id="CJu-Yq-ELZ"/>
+                                                <constraint firstItem="2qa-1Z-OPO" firstAttribute="top" secondItem="p4M-n6-c3g" secondAttribute="bottom" constant="50" id="Crb-vZ-TQx"/>
+                                                <constraint firstAttribute="trailing" secondItem="p4M-n6-c3g" secondAttribute="trailing" constant="29" id="FxO-GX-FzQ"/>
+                                                <constraint firstItem="p4M-n6-c3g" firstAttribute="top" secondItem="92z-SG-UBo" secondAttribute="top" constant="71" id="KPj-wV-BWO"/>
+                                                <constraint firstAttribute="trailing" secondItem="2qa-1Z-OPO" secondAttribute="trailing" constant="22" id="RAq-vm-fOY"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
@@ -86,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-462.31884057971018" y="65.625"/>
+            <point key="canvasLocation" x="-617.39130434782612" y="63.616071428571423"/>
         </scene>
     </scenes>
     <resources>
