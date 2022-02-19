@@ -42,57 +42,29 @@ class ViewController: UIViewController {
         
         let design : UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let collectionWidth = self.collectionView.frame.size.width
-        design.sectionInset = UIEdgeInsets(top:10, left:10, bottom:10, right:10)
-        design.minimumInteritemSpacing = 13
-        design.minimumLineSpacing = 25
+        design.sectionInset = UIEdgeInsets(top:10, left:3, bottom:10, right:30)
+        design.minimumInteritemSpacing = 4
+        design.minimumLineSpacing = 35
         
-        design.itemSize = CGSize(width: (collectionWidth-58)/2,
-                                 height: (collectionWidth-58)/2
+        design.itemSize = CGSize(width: (collectionWidth-72)/2,
+                                 height: (collectionWidth-72)/2
         )
         
         
         collectionView!.collectionViewLayout = design
         
-        //4
         collectionView.delegate = self
         collectionView.dataSource = self
         
         
     }
     
-    
-   
-    
-    
-    
-
 }
 
 
-// 1
+// CollectionViews
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func getDatas(){
-        // URL
-        let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=6fe8370265c396656c58d7dd9ff3e712&language=en-US")!
-        
-        WebService().fetchDatas(url: url) { result in
-                
-            if let result = result {
-                
-                self.movieListViewModel = MovieListViewModel(movieList: result)
-                
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            }
-            
-        }
-    }
-    
-    
-    
-
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"movieCell", for: indexPath ) as! MovieCollectionViewCell
         
@@ -109,9 +81,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
         //  /5hNcsnMkwU2LknLoru73c76el3z.jpg
         let defaultLink = "http://image.tmdb.org/t/p/w500"
-        
-        
-        
         let completePath = defaultLink + movieViewModel.imgPath
         
         cell.imgView.downloaded(from: completePath, contentMode : .scaleAspectFill)
@@ -150,16 +119,34 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 }
 
 
+
 extension ViewController{
     
-  
+    func getDatas(){
+        // URL
+        let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=6fe8370265c396656c58d7dd9ff3e712&language=en-US")!
+        
+        WebService().fetchDatas(url: url) { result in
+                
+            if let result = result {
+                
+                self.movieListViewModel = MovieListViewModel(movieList: result)
+                
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+            
+        }
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toDetailsVC" {
             let destinationVC = segue.destination as! DetailsVC
             
-            destinationVC.mvtitle = self.selectedMvTitle ?? nil
+            destinationVC.detailMovieObj = self.selectedMvTitle ?? nil
         }
     }
 }

@@ -44,6 +44,16 @@ struct MovieViewModel {
     
     
     var imgPath : String {
-        return self.movie.backdropPath ?? "-"
+        return self.movie.posterPath ?? "-"
+    }
+    
+    
+    var description : String {
+        return self.movie.overview ?? "-"
+    }
+    
+    
+    var releaseDate : String {
+        return self.movie.releaseDate ?? "-"
     }
 }
