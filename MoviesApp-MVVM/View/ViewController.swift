@@ -32,6 +32,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
    
     private var movieListViewModel : MovieListViewModel!
+    var selectedMvTitle : MovieViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -140,8 +141,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        self.selectedMvTitle = self.movieListViewModel.movieAtIndex(indexPath.row)
         performSegue(withIdentifier: "toDetailsVC", sender: nil)
-        print(self.movieListViewModel.movieAtIndex(indexPath.row).title)
+        
+       // print(self.movieListViewModel.movieAtIndex(indexPath.row).title)
     }
     
 }
@@ -149,11 +152,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
 extension ViewController{
     
+  
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toDetailsVC" {
-            print("GOO")
+            let destinationVC = segue.destination as! DetailsVC
+            
+            destinationVC.mvtitle = self.selectedMvTitle ?? nil
         }
     }
 }
