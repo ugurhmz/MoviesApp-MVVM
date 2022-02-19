@@ -42,11 +42,11 @@ class ViewController: UIViewController {
         let design : UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let collectionWidth = self.collectionView.frame.size.width
         design.sectionInset = UIEdgeInsets(top:10, left:10, bottom:10, right:10)
-        design.minimumInteritemSpacing = 3
-        design.minimumLineSpacing = 15
+        design.minimumInteritemSpacing = 13
+        design.minimumLineSpacing = 25
         
-        design.itemSize = CGSize(width: (collectionWidth-38)/2,
-                                 height: (collectionWidth-38)/2
+        design.itemSize = CGSize(width: (collectionWidth-58)/2,
+                                 height: (collectionWidth-58)/2
         )
         
         
@@ -58,6 +58,9 @@ class ViewController: UIViewController {
         
         
     }
+    
+    
+   
     
     
     
@@ -88,7 +91,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     
     
-    // 2
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"movieCell", for: indexPath ) as! MovieCollectionViewCell
         
@@ -117,15 +120,40 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         // if let -> Label direk silinir gözükmez  & guard let genelde kullanılır force unwrap yapma!
         cell.layer.borderColor = UIColor.purple.cgColor
         cell.layer.cornerRadius = 10
+        cell.layer.shadowColor = UIColor.white.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+        cell.layer.shadowRadius = 5.0
+        cell.layer.shadowOpacity = 1
+        cell.layer.masksToBounds = false
+        
         
         
         return cell
     }
     
-    //3
+ 
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return self.movieListViewModel == nil ? 0 : self.movieListViewModel.numberOfRowsInSection()
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "toDetailsVC", sender: nil)
+        print(self.movieListViewModel.movieAtIndex(indexPath.row).title)
+    }
+    
+}
+
+
+extension ViewController{
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toDetailsVC" {
+            print("GOO")
+        }
+    }
 }

@@ -17,6 +17,7 @@
 		6367A50927BF22610033610F /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6367A50827BF22610033610F /* MovieCollectionViewCell.swift */; };
 		6367A50B27BF22B40033610F /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6367A50A27BF22B40033610F /* WebService.swift */; };
 		6367A50D27BF31AA0033610F /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6367A50C27BF31AA0033610F /* MovieModel.swift */; };
+		63E52A8E27C072D50036A266 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E52A8D27C072D50036A266 /* DetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		6367A50827BF22610033610F /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		6367A50A27BF22B40033610F /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		6367A50C27BF31AA0033610F /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		63E52A8D27C072D50036A266 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				6367A4F227BF21060033610F /* SceneDelegate.swift */,
 				6367A4F427BF21060033610F /* ViewController.swift */,
 				6367A50827BF22610033610F /* MovieCollectionViewCell.swift */,
+				63E52A8D27C072D50036A266 /* DetailsVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6367A50D27BF31AA0033610F /* MovieModel.swift in Sources */,
+				63E52A8E27C072D50036A266 /* DetailsVC.swift in Sources */,
 				6367A4F527BF21060033610F /* ViewController.swift in Sources */,
 				6367A4F127BF21060033610F /* AppDelegate.swift in Sources */,
 				6367A4F327BF21060033610F /* SceneDelegate.swift in Sources */,
